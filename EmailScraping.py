@@ -14,16 +14,17 @@ emailRegex = re.compile(r'''
 #Extacting Emails
 def extractEmailsFromUrlText(urlText):
     extractedEmail =  emailRegex.findall(urlText)
+    print(extractedEmail)
     allemails = []
     for email in extractedEmail:
         allemails.append(email[0])
+    print(allemails)
     lenh = len(allemails)
     print("\tNumber of Emails : %s\n"%lenh )
     seen = set()
     for email in allemails:
         if email not in seen:  # faster than `word not in output`
             seen.add(email)
-            emailFile.write(email+"\n")#appending Emails to a filerea
 
 #HtmlPage Read Func
 def htmlPageRead(url, i):
